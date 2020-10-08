@@ -69,8 +69,20 @@ const StyledPopup = styled.div`
     }
   }
 `
-
-const Popup = (props) => {
+const Close = styled.button`
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px; 
+  line-height: 0.7;
+  font-size: 24px;
+  padding: 10px;
+  background: rgba(250,235,215,0.7);
+  opacity: 0.5;
+  border: none;
+  outline: none;
+`
+const Popup = () => {
     const dispatch = useDispatch();
     const photos = useSelector(state => state.photosState.photos);
     const selPhoto = useSelector(state => state.photosState.selPhoto);
@@ -99,6 +111,7 @@ const Popup = (props) => {
                     <span className={"title"}>{selPhoto} : {photo.title}</span>
                 </> : 'LOADING...'}
             </StyledPopup>
+            <Close onClick={() => dispatch(openPopup(false))}>X</Close>
         </StyledOverlay>
     )
 }

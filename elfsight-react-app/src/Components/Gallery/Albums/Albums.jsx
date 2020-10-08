@@ -7,11 +7,12 @@ import Slider from "../Slider/Slider";
 
 
 const StyledAlbums = styled.div`
+  margin-bottom: 32px;
   padding: 20px 20px 60px;
-  background-color: #f2d5ff;
+  background-color: #fffeb4;
   max-width: 100%;
 `
-const Albums = (props) => {
+const Albums = () => {
     const dispatch = useDispatch();
     const getAlbumsThunk = useCallback((id) => dispatch(getUserAlbums(id)), [dispatch]);
     const selectAlbumThunk = useCallback((id) => dispatch(selectAlbum(id)), [dispatch]);

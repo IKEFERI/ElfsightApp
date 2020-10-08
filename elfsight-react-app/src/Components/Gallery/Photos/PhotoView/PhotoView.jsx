@@ -17,6 +17,9 @@ const StyledPhotoView = styled.div`
   margin: 40px auto;
   cursor: pointer;
   position: relative;
+  @media screen and (max-width: 768px){
+    height: 60vh;
+  }
   span{
     display: block;
     position: absolute;
@@ -37,7 +40,7 @@ const StyledPhotoView = styled.div`
 const Photo = styled.img`
 width: 100%;
 height: 100%;
-object-fit: contain;
+object-fit: cover;
 `
 
 const PhotoView = (props) => {

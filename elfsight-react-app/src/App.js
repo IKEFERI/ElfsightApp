@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import logo from './logo.svg';
 import Users from "./Components/Users/Users";
 import Gallery from "./Components/Gallery/Gallery";
@@ -7,15 +7,19 @@ import Footer from "./Components/Footer/Footer";
 import {AppHeader, AppLogo, Main, StyledApp} from "./StyledApp";
 
 function App() {
+    const MainRef = useRef(null);
+    const scrollFromMain = () => {
+        MainRef.current.scrollIntoView({block: "start", behavior: "smooth"});
+    }
 
     return (
         <StyledApp>
-            <AppHeader className="App-header">
-                <AppLogo src={logo} className="App-logo" alt="logo"/>
+            <AppHeader>
+                <AppLogo src={logo} alt="logo"/>
                 <h1>Elfsight Test App</h1>
-                <div>▼</div>
+                <button onClick={scrollFromMain}>▼</button>
             </AppHeader>
-            <Main>
+            <Main ref={MainRef}>
                 <Users/>
                 <Gallery/>
             </Main>

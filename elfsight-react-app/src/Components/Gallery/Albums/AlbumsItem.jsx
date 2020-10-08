@@ -20,13 +20,16 @@ const StyledAlbumsItem = styled.div`
   border-top: none;
   cursor: pointer;
   transition: all ease 0.25s;
+  opacity: 0.6;
   &:hover{
     background-color: #d7d7d7;
+    opacity: 1;
     transform: translateY(-5%);
   }
   &:focus, &:active, &.active{ 
     background-color: #92ff8f;
     transform: translateY(-5%);
+    opacity: 1;
   }
     
   & > div:first-of-type{

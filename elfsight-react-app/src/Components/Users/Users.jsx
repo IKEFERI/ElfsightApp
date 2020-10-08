@@ -9,12 +9,12 @@ const StyledUsers = styled.div`
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
   padding: 20px;
   background-color: #fffeb4;
   justify-content: center;
 `
-const Users = (props) => {
+const Users = () => {
     const dispatch = useDispatch();
     const getUsersThunk = useCallback(() => dispatch(getUsers()), [dispatch]);
     const users = useSelector(state => state.usersState.users);

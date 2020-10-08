@@ -7,13 +7,11 @@ import styled from "styled-components";
 
 const StyledPhotos = styled.div`
   min-height: 100vh;
-  padding: 20px ; 
-  
-  background-color: #ffdfb5;
-  margin-top: 20px;
+  padding: 20px ;  
+  background-color: #fffeb4; 
 `
 
-const Photos = (props) => {
+const Photos = () => {
     const dispatch = useDispatch();
     const getPhotosThunk = useCallback((id) => dispatch(getAlbumPhotos(id)), [dispatch]);
     const selectPhotoThunk = useCallback((id) => dispatch(selectPhoto(id)), [dispatch]);

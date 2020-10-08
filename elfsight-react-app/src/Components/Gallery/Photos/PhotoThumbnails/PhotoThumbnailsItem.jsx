@@ -17,15 +17,13 @@ const StyledPhotoThumbnailsItem = styled.div`
   margin-right: 15px;
   cursor: pointer;
   transition: all ease 0.25s;
-  &:hover{
+  opacity: 0.6;
+  &:hover, &.active{
     transform: scale(0.95);
     box-shadow: 0 0 6px #ff8500;
+    opacity: 1;
   }
-  &.active{
-    opacity: 0.8;
-    transform: scale(0.85);
-    box-shadow: 0 0 8px #ff8500;
-  }
+ 
   &:last-of-type{
     margin-right: 0;
   }

@@ -5,7 +5,7 @@ export const StyledApp = styled.div`
   overflow: hidden;
   position:relative;
   text-align: center;
-  background-color: #fcda77;
+  background-color: #887c58;
 `;
 
 export const AppLogo = styled.img`
@@ -22,9 +22,17 @@ export const AppHeader = styled.header`
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  button{
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  }
 `;
 export const Main = styled.main`
-    background-color: #fff0c4; 
+    background-color: #c5b88f; 
     padding: 80px 40px;
     max-width: 1200px;
     margin: auto;
