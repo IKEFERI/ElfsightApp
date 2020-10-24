@@ -88,6 +88,7 @@ const Popup = () => {
     const selPhoto = useSelector(state => state.photosState.selPhoto);
     const isOpenPopup = useSelector(state => state.photosState.openPopup);
     let photo = photos.find(arr => arr.id === selPhoto);
+    let photoIndex = photos.findIndex(arr => arr.id === selPhoto) + 1;
     const overlay = useRef(null);
     const closePopup = (event) => {
         return event.target === overlay.current ? dispatch(openPopup(false)) : null;
@@ -99,11 +100,11 @@ const Popup = () => {
                 {photo ? <>
                     <img src={photo.url} alt="gallery"/>
 
-                    {selPhoto === 1 ?
+                    {photoIndex === 1 ?
                         <span className={"leftArr disable"}>&#8656;</span> :
                         <span onClick={() => dispatch(selectPhoto(selPhoto - 1))}
                               className={"leftArr"}>&#8656;</span>}
-                    {selPhoto === photos.length ?
+                    {photoIndex === photos.length ?
                         <span className={"rightArr disable"}>&#8658;</span> :
                         <span onClick={() => dispatch(selectPhoto(selPhoto + 1))}
                               className={"rightArr"}>&#8658;</span>}
